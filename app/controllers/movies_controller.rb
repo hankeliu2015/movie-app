@@ -12,7 +12,14 @@ class MoviesController < ApplicationController
 
   # registration and login system
     # form to create an user account, with email, user and password
-    # a form to login with email  and password
+      # user signup, user info update, user deletion
+
+    # session controller |  a form to login with email  and password
+      # user login and logout
+
+    # Userscontroller (optional)
+      # user show profile page
+      # employee page
 
   # helper method
     #is_logged_in?
