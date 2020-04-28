@@ -1,2 +1,30 @@
 class MoviesController < ApplicationController
-end
+
+  def index
+    @movies = Movie.all
+  end
+
+  def new
+    @movie = Movie.new
+  end
+
+  def create
+    @movie = Movie.new(movie_params)
+    if @movie.save
+      redirect_to @movie
+    else
+      render :new
+    end
+  end
+
+  def show
+    @movie = Movie.find_by(id: params[:id])
+  end
+
+  private
+    def movie_params
+      params.require(:movie).permit(:title, :release_year)
+    end
+
+
+end #end of controller
