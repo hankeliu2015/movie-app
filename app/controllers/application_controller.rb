@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  # helper_methods :current_user, :is_logged_in, :authenticate_user!, :is_admin?
+  helper_method :current_user, :is_logged_in, :authenticate_user!, :is_admin?
 
   def index
   end
