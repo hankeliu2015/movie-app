@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
 
+  before_action :authenticate_user!
+  before_action :is_admin?, only: [:new, :create]
   # non authenticated users should not be able to see any of these routes
   # only authenticated users who are an admin can create , delete or edit a movie
 
