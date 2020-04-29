@@ -6,6 +6,6 @@ class RegistrationsController < ApplicationController
   end
 
   def create
-    @user = User.new
+    @user = User.new(params[:user])
   end
 end
