@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_methods :current_user, :is_logged_in, :authenticate_user!, :is_admin?
+  # helper_methods :current_user, :is_logged_in, :authenticate_user!, :is_admin?
 
   def index
   end
@@ -21,6 +21,8 @@ class ApplicationController < ActionController::Base
       current_user.admin if current_user
     end
 
-    
+    def redirect_if_not_admin!
+      redirect_to movies_path if !is_admin?
+    end
 
 end
