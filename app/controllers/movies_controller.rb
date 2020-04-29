@@ -30,6 +30,8 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+    # binding.pry
+    # byebug
   end
 
   def new
