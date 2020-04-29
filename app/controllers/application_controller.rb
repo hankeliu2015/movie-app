@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
     end
 
     def redirect_if_not_admin!
+      # byebug
       redirect_to movies_path if !is_admin?
     end
 
