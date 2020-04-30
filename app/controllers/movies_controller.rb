@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
 
+  before_action :authenticate_user!
+  before_action :redirect_if_not_admin!, only: [:new, :create]
   # non authenticated users should not be able to see any of these routes
   # only authenticated users who are an admin can create , delete or edit a movie
 
@@ -30,6 +32,8 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+    # binding.pry
+    # byebug
   end
 
   def new
